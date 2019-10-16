@@ -1,0 +1,12 @@
+{
+    "name": "FreeFlow",
+    "version": "1.0",
+    "description": "FreeFlow Chrome Extension",
+    "permissions": ["management"],
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": "freeflow.png",
+        "default_title": "FreeFlow"
+    },
+    "manifest_version": 2
+}
