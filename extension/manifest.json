@@ -4,10 +4,14 @@
 	"manifest_version": 2,
     "description": "FreeFlow Chrome Extension",
     "permissions": ["management"],
+	"icons": {
+		"16": "16.png",
+		"32": "32.png",
+		"48": "48.png",
+		"128": "128.png"
+    },
     "browser_action": {
         "default_popup": "popup.html",
-        "default_icon": "freeflow.png",
         "default_title": "FreeFlow"
-    },
-    "manifest_version": 2
+    }
 }
