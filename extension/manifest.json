@@ -1,6 +1,6 @@
 {
     "name": "FreeFlow",
-    "version": "1.0",
+    "version": "0.01",
 	"manifest_version": 2,
     "description": "FreeFlow Chrome Extension",
     "permissions": ["management"],
