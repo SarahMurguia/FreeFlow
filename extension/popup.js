@@ -7,3 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);
 }, false);
 
+document.addEventListener('DOMContentLoaded', function() {
+    var checkLogIn = document.getElementById('login');
+    // onClick's logic below:
+    checkLogIn.addEventListener('click', function() {
+        alert("Got it");
+        window.location.href="login.html";
+    }, false);
+}, false);
