@@ -12,11 +12,15 @@ body {
   top: 0px;
 }
 
+.logo {
+  margin-top: 35px;
+}
 
 .signUpBox {
   position: absolute;
   width: 107px;
   height: 28px;
+
   left: 53px;
   top: 144px;
 
@@ -27,6 +31,7 @@ body {
   transition: 0.3s;
 
 }
+
 .button:hover {opacity: 1}
 
 
@@ -46,7 +51,8 @@ body {
   color: #000000;
 }
 
-.logInBox {position: absolute;
+.logInBox {
+  position: absolute;
   width: 107px;
   height: 28px;
   left: 53px;
