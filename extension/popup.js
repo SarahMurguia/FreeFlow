@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // onClick's logic below:
     checkSignUp.addEventListener('click', function() {
         alert("Got it");
+        window.location.href="signup.html";
     }, false);
 }, false);
 
