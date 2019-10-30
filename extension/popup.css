@@ -48,7 +48,7 @@ body {
   color: #000000;
 }
 
-.signInBox {
+.signUpBox {
   position: absolute;
   width: 107px;
   height: 28px;
@@ -61,7 +61,7 @@ body {
   border-radius: 7px;
 }
 
-.signInBoxText {
+.sigUpBoxText {
   position: absolute;
   width: 45px;
   height: 15px;
