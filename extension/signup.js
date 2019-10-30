@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var pass1 = document.getElementById("su-pass1").value;
         var pass2 = document.getElementById("su-pass2").value;
 
+        // TODO: Need to some add this info to the database
         if (pass1 == pass2){
             enterOk = "true"
         }
