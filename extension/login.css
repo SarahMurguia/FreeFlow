@@ -1,18 +1,48 @@
 @charset "utf-8";
 body {
-  position: relative;
-  width: 214px;
-  height: 300px;
-  background: #42608F;
-  left: 0px;
-  top: 0px;
+	position: relative;
+	width: 214px;
+	height: 300px;
+	background: #42608F;
+}
+
+.button {
+	border-radius: 5px;
+}
+
+.button:hover {
+	color: #FFFFFF;
+	background: #1674CD;
+}
+
+.input {
+	border-radius: 5px;
 }
 
 .logo {
-  margin-top: 35px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	padding-top: 0px;
+	align-content: center;
 }
 
-.tabTitle {
+.label {
 	color: #FFFFFF;
-	
+	display: block;
+	text-align: left;
+	margin-left: 27px;
+}
+
+#lPass {
+	margin-top: 10px;
+}
+
+#fpass {
+	margin-top: 5px;
+	margin-left: 26px;
+}
+
+#login {
+	margin-top: 25px;
+	margin-left: 144px;
 }

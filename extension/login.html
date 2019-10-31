@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
 		<link href="login.css" rel="stylesheet" type="text/css">
+		<script src="login.js"></script>
 	</head>
-        <body>
-			<p class="tabTitle">USERNAME:</p>
-			<input type="text">
-			<p class="tabTitle">PASSWORD: </p>
-			<input type="password">
-			<br/> <br/>
-			<input type="button" value="Forgot Password?">
-			<br/> <br/>
-			<input type="button" value="Login">
-        </body>
-    </html>
+	<body>
+		<div align="center"><img src="freeflow.png" alt="" width="200" class="logo"/></div>
+		<form name=loginForm>
+			<label class="label" for="user">Username:</label>
+			<div align="center"><input type="text" class="input" id="user"></div>
+			<label class="label" id="lPass" for="pass">Password:</label>
+			<div align="center"><input type="password" class="input" id="pass"></div>
+		  	<button type="button" class="button" id="fpass">Forgot Password?</button>
+	  	</form>
+		<button form="loginForm" type="submit" class="button" id="login">Login</button>
+	</body>
+</html>
