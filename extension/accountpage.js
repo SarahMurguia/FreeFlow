@@ -51,3 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
         alert("Pass Through Terms of Service Document \n ~~~~~~~~~ \n ~~~~~~~~~ \n ~~~~~~~~~ \n ~~~~~~~~~ \n ~~~~~~~~~");
     }, false);
 }, false);
+
+
+// Event Listener for viewing Services Page
+document.addEventListener('DOMContentLoaded', function() {
+    var checkForServices = document.getElementById('ap-services');
+    checkForServices.addEventListener('click', function() {
+        window.location.href="servicepage.html";
+    }, false);
+}, false);
