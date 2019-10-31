@@ -1,4 +1,10 @@
-function Login() {
-  var i, args=Login.arguments; document.returnValue = false;
-  eval(args[i]+".location.href='"+args[i+1]+"'");
-} 
+document.addEventListener('DOMContentLoaded', function() {
+    var checkLogin = document.getElementById('login');
+	// onClick's logic below:
+    checkLogin.addEventListener('click', function() {
+        var user = document.forms["loginForm"]["user"].value,
+			pass = document.forms["loginForm"]["pass"].value;
+		alert("Username: " + user + '\n' + "Password: " + pass);
+		window.location.href="servicepage.html";
+    }, false);
+}, false);

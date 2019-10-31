@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
 		<link href="login.css" rel="stylesheet" type="text/css">
 		<script src="login.js"></script>
-</head>
+	</head>
 	<body>
-		<div class="center">
-			<img src="freeflow.png" alt="" width="200" class="logo"/>
-			<form class="bTitle">Username:</form>
-			<input type="text" class="rad">
-			<form class="bTitle" id="pass">Password:</form>
-			<input type="password" class="rad">
-			<input type="button" class="rad" id="fpass" value="Forgot Password?">
-			<input type="button" class="rad" id="login" onClick="Login('window','servicepage.html')" value="Login" >
-		</div>
+		<div align="center"><img src="freeflow.png" alt="" width="200" class="logo"/></div>
+		<form name=loginForm>
+			<label class="label" for="user">Username:</label>
+			<div align="center"><input type="text" class="input" id="user"></div>
+			<label class="label" id="lPass" for="pass">Password:</label>
+			<div align="center"><input type="password" class="input" id="pass"></div>
+		  	<button type="button" class="button" id="fpass">Forgot Password?</button>
+	  	</form>
+		<button form="loginForm" type="submit" class="button" id="login">Login</button>
 	</body>
 </html>
