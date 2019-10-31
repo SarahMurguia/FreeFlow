@@ -1,16 +1,15 @@
+// Event Listener for the Sign Up Page
 document.addEventListener('DOMContentLoaded', function() {
     var checkSignUp = document.getElementById('signup');
-    // onClick's logic below:
     checkSignUp.addEventListener('click', function() {
         window.location.href="signup.html";
     }, false);
 }, false);
 
+// Event Listener for the Login In Page
 document.addEventListener('DOMContentLoaded', function() {
     var checkLogIn = document.getElementById('login');
-    // onClick's logic below:
     checkLogIn.addEventListener('click', function() {
-        alert("Got it");
         window.location.href="login.html";
     }, false);
 }, false);
