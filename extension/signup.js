@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
    
         if (enterOk == "true"){
             window.location.href="servicepage.html";
+            chrome.browserAction.setPopup({popup: "servicepage.html"});
         }
         else{
             alert("Passwords dont match!");
