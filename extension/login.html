@@ -2,15 +2,17 @@
 <html>
 <head>
 		<link href="login.css" rel="stylesheet" type="text/css">
-	</head>
-        <body>
-			<p class="tabTitle">USERNAME:</p>
-			<input type="text">
-			<p class="tabTitle">PASSWORD: </p>
-			<input type="password">
-			<br/> <br/>
-			<input type="button" value="Forgot Password?">
-			<br/> <br/>
-			<input type="button" value="Login">
-        </body>
-    </html>
+		<script src="login.js"></script>
+</head>
+	<body>
+		<div class="center">
+			<img src="freeflow.png" alt="" width="200" class="logo"/>
+			<form class="bTitle">Username:</form>
+			<input type="text" class="rad">
+			<form class="bTitle" id="pass">Password:</form>
+			<input type="password" class="rad">
+			<input type="button" class="rad" id="fpass" value="Forgot Password?">
+			<input type="button" class="rad" id="login" onClick="Login('window','servicepage.html')" value="Login" >
+		</div>
+	</body>
+</html>
