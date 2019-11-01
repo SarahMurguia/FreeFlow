@@ -1,0 +1,78 @@
+html {
+  overflow-x: hidden;
+}
+  
+body {
+  position: relative;
+  width: 214px;
+  height: 300px;
+
+  background: #42608F;
+  left: 0px;
+  top: 0px;
+}
+
+.logo {
+  margin-top: 35px;
+}
+
+.signUpBox {
+  position: absolute;
+  width: 107px;
+  height: 28px;
+
+  left: 53px;
+  top: 144px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+
+  transition: 0.3s;
+
+}
+
+.signUpBoxText {
+  position: absolute;
+  width: 34px;
+  height: 15px;
+  left: 90px;
+  top: 216px;
+
+  font-family: Pontano Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+}
+
+.logInBox {
+  position: absolute;
+  width: 107px;
+  height: 28px;
+  left: 53px;
+  top: 209px;
+  
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.logInBoxText {
+  position: absolute;
+  width: 45px;
+  height: 15px;
+  left: 84px;
+  top: 151px;
+
+  font-family: Pontano Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+}
