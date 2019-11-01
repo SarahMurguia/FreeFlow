@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var checkHousehold = document.getElementById('ap-house');
     checkHousehold.addEventListener('click', function() {
-        window.location.href="household.html";
+        window.location.href="/household/household.html";
     }, false);
 }, false);
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var checkPass = document.getElementById('ap-changepass');
     checkPass.addEventListener('click', function() {
-        window.location.href="signup.html";
+        window.location.href="/passpage/pass.html";
     }, false);
 }, false);
 
