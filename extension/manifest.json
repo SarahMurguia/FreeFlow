@@ -6,14 +6,14 @@
     "permissions": ["management"],
 
     "icons": {
-        "16": "16.png",
-        "32": "32.png",
-        "48": "48.png",
-        "128": "128.png"
+        "16": "logo_pictures/16.png",
+        "32": "logo_pictures/32.png",
+        "48": "logo_pictures/48.png",
+        "128": "logo_pictures/128.png"
     },
 
     "browser_action": {
-        "default_popup": "popup.html",
+        "default_popup": "startpage/popup.html",
         "default_title": "FreeFlow"
     },
 
