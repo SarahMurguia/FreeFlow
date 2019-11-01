@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var checkToS = document.getElementById('ap-tos');
     checkToS.addEventListener('click', function() {
         // TODO: Link Proper Terms of Service Document
-        alert("Pass Through Terms of Service Document \n ~~~~~~~~~ \n ~~~~~~~~~ \n ~~~~~~~~~ \n ~~~~~~~~~ \n ~~~~~~~~~");
+        window.open('/docs/freeflow-tos.pdf');        
     }, false);
 }, false);
 
