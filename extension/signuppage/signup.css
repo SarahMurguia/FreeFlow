@@ -1,0 +1,142 @@
+html {
+  overflow-x: hidden;
+}
+  
+body {
+  position: relative;
+  width: 214px;
+  height: 300px;
+
+  background: #426087;
+  left: 0px;
+  top: 0px;
+}
+
+.logo {
+  margin-top: 5px;
+  position: relative;
+}
+
+.emailTxt {
+	position: absolute;
+	width: auto;
+	height: 16px;
+	left: 27px;
+	top: 50px;
+
+	font-family: Pontano Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+
+}
+.emailBox {
+	position: absolute;
+	width: 159px;
+	height: 20px;
+	left: 27px;
+	top: 83px;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+
+}
+
+.usernameTxt {
+	position: absolute;
+	width: auto;
+	height: 16px;
+	left: 27px;
+	top: 100px;
+
+	font-family: Pontano Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+
+}
+.usernameBox {	
+	position: absolute;
+	width: 159px;
+	height: 20px;
+	left: 27px;
+	top: 133px;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+
+}
+
+.passTxt1{
+	position: absolute;
+	width: auto;
+	height: 16px;
+	left: 27px;
+	top: 150px;
+
+	font-family: Pontano Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+}
+.passBox1{
+	position: absolute;
+	width: 159px;
+	height: 20px;
+	left: 27px;
+	top: 183px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+.passTxt2{
+	position: absolute;
+	width: auto;
+	height: 16px;
+	left: 27px;
+	top: 200px;
+	font-family: Pontano Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+}
+
+.passBox2{
+	position: absolute;
+	width: 159px;
+	height: 20px;
+	left: 27px;
+	top: 233px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+
+.enterBox{
+	position: absolute;
+	width: 58px;
+	height: 20px;
+	left: 134px;
+	top: 270px;
+
+	background: #4E74AE;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+
+
+
+
