@@ -1,0 +1,142 @@
+html {
+  overflow-x: hidden;
+}
+  
+body {
+  position: relative;
+  width: 214px;
+  height: 300px;
+
+  background: #42608F;
+  left: 0px;
+  top: 0px;
+}
+
+
+.navbar {
+  background-color: #31476B;
+  position: fixed;
+  bottom: 0;
+  left: 0px;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar a:hover {
+  background: #223147;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #728AAF;
+  color: white;
+}
+
+.main {
+  padding: 16px;
+  margin-bottom: 30px;
+}
+
+.deleteAccountBtn{
+	position: absolute;
+	width: 160px;
+	height: 29px;
+	left: calc(50% - 160px/2);
+	top: calc(50% - 29px/2 - 93px);
+
+	background: #728AAF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+.manageHouseBtn{
+	position: absolute;
+	width: 160px;
+	height: 29px;
+	left: calc(50% - 160px/2);
+	top: calc(50% - 29px/2 - 44px);
+
+	background: #728AAF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+.changePassBtn {
+	position: absolute;
+	width: 160px;
+	height: 29px;
+	left: calc(50% - 160px/2);
+	top: calc(50% - 29px/2 + 5px);
+
+	background: #728AAF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+.tosBtn{
+	position: absolute;
+	width: 160px;
+	height: 29px;
+	left: calc(50% - 160px/2);
+	top: calc(50% - 29px/2 + 53px);
+
+	background: #728AAF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+
+}
+
+.logout {
+	position: absolute;
+	width: auto;
+	height: 21px;
+	left: calc(50% - 41px/2 + 70.5px);
+	top: calc(50% - 21px/2 - 141px);
+
+	background: #728AAF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+
+.netflixBox {
+	position: absolute;
+	width: 149px;
+	height: 75px;
+	left: 33px;
+	top: 13px;
+	background: #221F20;
+}
+
+.huluBox {
+	position: absolute;
+	width: 149px;
+	height: 76px;
+	left: 32px;
+	top: 99px;
+	background: #95F89E;
+}
+
+.hboBox{
+	position: absolute;
+	width: 149px;
+	height: 75px;
+	left: 33px;
+	top: 188px;
+	background: #303987;
+}
+
+
+
+
+
+
