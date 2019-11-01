@@ -1,0 +1,101 @@
+html {
+  overflow-x: hidden;
+}
+  
+body {
+  position: relative;
+  width: 214px;
+  height: 300px;
+
+  background: #426087;
+  left: 0px;
+  top: 0px;
+}
+
+.currTxt{
+	font-family: Pontano Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+	left: 30px;
+
+	position: absolute;
+	top: 15px;
+}
+.currPass {
+	position: absolute;
+	width: 159px;
+	height: 28px;
+	left: 27px;
+	top: 56px;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+.newTxt1{
+	font-family: Pontano Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+	left: 30px;
+
+	position: absolute;
+	top: 91px;
+}
+.newPass1 {
+	position: absolute;
+	width: 159px;
+	height: 28px;
+	left: 27px;
+	top: 132px;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+
+}
+
+.newTxt2{
+	font-family: Pontano Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+	left: 30px;
+
+	position: absolute;
+	top: 167px;
+}
+.newPass2{
+	position: absolute;
+	width: 159px;
+	height: 28px;
+	left: 27px;
+	top: 208px;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+
+.enterBox{
+	position: absolute;
+	width: 58px;
+	height: 20px;
+	left: 134px;
+	top: 270px;
+
+	background: #4E74AE;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+}
+
+
