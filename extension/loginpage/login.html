@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<link href="../bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="login.css" rel="stylesheet" type="text/css">
+		<script src="../jquery-3.4.1.min.js"></script>
+		<script src="../bootstrap.bundle.min.js"></script>
 		<script src="login.js"></script>
+		<script src="md5.js"></script>
 	</head>
-	<body>
-		<div align="center"><img src="freeflow.png" alt="" width="200" class="logo"/></div>
-		<form name=loginForm>
-			<label class="label" for="user">Username:</label>
-			<div align="center"><input type="text" class="input" id="user"></div>
-			<label class="label" id="lPass" for="pass">Password:</label>
-			<div align="center"><input type="password" class="input" id="pass"></div>
-		  	<button type="button" class="button" id="fpass">Forgot Password?</button>
-	  	</form>
-		<button form="loginForm" type="submit" class="button" id="login">Login</button>
+	<body class="co">
+		<div><img src="../logo_pictures/freeflow.png" alt="" width="200" class="logo"/></div>
+		<form class="form-group">
+			<div>
+				<label class="text-white" for="user">Username:</label>
+				<input type="text" class="form-control form-control-sm" id="user">
+			</div>
+			<div>
+				<label class="text-white mt-2" id="lPass" for="pass">Password:</label>
+				<input type="password" class="form-control form-control-sm" id="pass">
+			</div>
+			<div>
+				<button type="button" class="btn btn-primary btn-sm mt-2" id="fpass">Forgot Password?</button>
+				<button form="loginForm" type="submit" class="btn btn-primary btn-sm mt-2" id="login" disabled>Login</button>
+				<button type="button" class="btn btn-primary btn-sm mt-2" data-toggle="modal" data-target="#modal">Open modal</button>
+			</div>
+  		</form>
+		
+		<!-- The Modal -->
+		<div class="modal fade" id="modal">
+			<div class="modal-dialog modal-sm modal-dialog-centered">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h5 class="modal-title">Modal Heading</h5>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body">
+						Modal body..
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
