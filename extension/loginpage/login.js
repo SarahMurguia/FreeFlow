@@ -9,6 +9,18 @@ $(function() {
 		if (empty) { $('#login').prop('disabled', true); }
 		else { $('#login').prop('disabled', false); }
 	});
+	
+	// Handler enter key pressed in any input
+	$('form input').keypress(function(e) {
+		if (e.keyCode == 13) {
+			var empty = false;
+			$('form input').each(function() {
+				if($(this).val() == '') { empty = true; }
+			});
+			
+			if (!empty) { $('#login').click() }
+		}
+	});
 
 	// Forgot Password button handler
 	$('#fpass').click(function() {
