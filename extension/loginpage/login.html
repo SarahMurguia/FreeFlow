@@ -14,7 +14,7 @@
 			<div><img src="../logo_pictures/freeflow.png" alt="" width="200" class="logo"/></div>
 			
 			<form class="form-group">
-				<div>
+			  <div>
 					<label class="text-white" for="user">Username:</label>
 					<input type="text" class="form-control form-control-sm" id="user">
 				</div>
@@ -23,19 +23,19 @@
 					<input type="password" class="form-control form-control-sm" id="pass">
 				</div>
 				<div>
-					<button type="button" class="btn btn-primary btn-sm mt-2">Forgot Password?</button>
+					<button type="button" class="btn btn-primary btn-sm mt-2" data-toggle="modal" data-target="#modal">Forgot Password?</button>
 					<button form="loginForm" type="submit" class="btn btn-primary btn-sm mt-2" id="login" disabled>Login</button>
 				</div>
-			</form>
+		  </form>
 		</div>
 		
 		<!-- The Modal -->
 		<div class="modal fade" id="modal">
-			<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<!-- Modal Header -->
 					<div class="modal-header">
-						<h6 class="modal-title">Login Failed!</h6>
+						<h6 class="modal-title">Login Failed</h6>
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 

@@ -3,14 +3,16 @@ body {
 	width: 230px;
 	height: 300px;
 	background: #42608F;
-	padding-left: 20px;
-	padding-right: 20px;
 }
 
-.logo {
-	margin-left: -16px;	
+.container {
+	width: 230px;
 }
 
 #login {
-	margin-left: 110px;	
+	margin-left: 149px;
+}
+
+.modal-dialog {
+	width: 215px;
 }
