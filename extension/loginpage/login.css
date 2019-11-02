@@ -6,3 +6,11 @@ body {
 	padding-left: 20px;
 	padding-right: 20px;
 }
+
+.logo {
+	margin-left: -16px;	
+}
+
+#login {
+	margin-left: 110px;	
+}

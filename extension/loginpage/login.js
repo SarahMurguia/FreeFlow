@@ -27,8 +27,9 @@ $(function() {
 			
 			// Login failed
 			if (id < 0) {
-				if (id == -1) { alert("Invalid password!"); }
-				else { alert("User '" + user + "' does not exist!"); }
+				if (id == -1) { $('div.modal-body').text("Invalid password"); }
+				else { $('div.modal-body').text("Username '" + user + "' does not exist"); }
+				$('#modal').modal('show');
 			}
 
 			// Success
