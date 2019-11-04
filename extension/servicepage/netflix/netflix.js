@@ -6,8 +6,8 @@ $(function() {
 			if($(this).val() == '') { empty = true; }
 		});
 
-		if (empty) { $('#enter').prop('disabled', true); }
-		else { $('#enter').prop('disabled', false); }
+		if (empty) { $('#netflix-enter').prop('disabled', true); }
+		else { $('#netflix-enter').prop('disabled', false); }
 	});
 	
 	// Handler enter key pressed in any input
@@ -18,12 +18,12 @@ $(function() {
 				if($(this).val() == '') { empty = true; }
 			});
 			
-			if (!empty) { $('#enter').click() }
+			if (!empty) { $('#netflix-enter').click() }
 		}
 	});
 
 	// Login button handler
-	$('#enter').click(function() {
+	$('#netflix-enter').click(function() {
 
 		// Get form value
 		var acc_user = $('#user').val().trim(),
@@ -42,4 +42,34 @@ $(function() {
 			alert(xhr.responseText);				
 		});
 	});
+
+
+
+	 $('#netflix-enter').click(function() {
+        var serv = "http://freeflow.tk/query.php"
+
+        // Get entered input
+        var email = $('#n-email').val(),
+            pass2 = $('#n-pass').val();
+		var done = false;
+		$.ajaxSetup({async: false});
+        // Check email
+        $.post(serv, { query: "SELECT * FROM netflix WHERE email='" + email + "';" }, function(ret) {
+            if (ret == ' []') {
+				// Check username
+                $.post(serv, { query: "SELECT * FROM netflix WHERE user='" + user + "';" }, function(ret) {
+                    if (ret == ' []') {
+						var pass = md5(pass1);
+                        $.post(serv, {query: "INSERT INTO netflix (id, user, pass) VALUES ('" + "fakeuser" + "', '" + email + "', '" + pass + "');"}, function() {
+							window.location.href="/servicepage/servicepage.html";
+						});
+                    } else {
+                        alert('Username have been used!\n');
+                    }
+                });
+            } else {
+				alert('Email have been used!\n');
+            }
+        });
+     
 });
