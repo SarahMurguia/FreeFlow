@@ -33,9 +33,8 @@ $(function() {
 		$.post('http://freeflow.tk/login.php', {user: user, pass: pass}).done(function(ret) {
 			var id = parseInt(ret);
 			
-			// TODO: Add Acc user and acc pass
-
-			window.location ='/servicepage/servicepage.html';
+		// TODO: Add Acc user and acc pass
+		window.location ='/servicepage/servicepage.html';
 		
 
 		// Connect failed
