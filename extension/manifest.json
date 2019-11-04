@@ -6,10 +6,10 @@
     "permissions": ["management", "http://freeflow.tk/*", "http://*.freeflow.tk/*"],
 
     "icons": {
-        "16": "logo_pictures/16.png",
-        "32": "logo_pictures/32.png",
-        "48": "logo_pictures/48.png",
-        "128": "logo_pictures/128.png"
+        "16": "pictures/ff_logo/16.png",
+        "32": "pictures/ff_logo/32.png",
+        "48": "pictures/ff_logo/48.png",
+        "128": "pictures/ff_logo/128.png"
     },
 
     "browser_action": {
