@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var netflixCheck = document.getElementById('sp-netflix');
     netflixCheck.addEventListener('click', function() {
-    	alert("netflix");
     	if (netflixCheck.classList.contains("activated") == false){
     		netflixCheck.classList.add("activated");
     	}
         // Check if info in data base
-        // if yes let user log in
+        // if yes let user log in service
 
         // if no let user sign up
         window.location.href="netflix/netflix.html";
@@ -28,12 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var huluCheck = document.getElementById('sp-hulu');
     huluCheck.addEventListener('click', function() {
-        alert("hulu");
         if (huluCheck.classList.contains("activated") == false){
     		huluCheck.classList.add("activated");
     	}
         // Check if info in data base
-        // if yes let user log in
+        // if yes let user log in service
 
         // if no let user sign up
         window.location.href="hulu/hulu.html";
@@ -46,13 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var hboCheck = document.getElementById('sp-hbo');
 
     hboCheck.addEventListener('click', function() {
-        alert("hbo");
         if (hboCheck.classList.contains("activated") == false){
     		hboCheck.classList.add("activated");
     	}
 
         // Check if info in data base
-        // if yes let user log in
+        // if yes let user log in to service
 
         // if no let user sign up
         window.location.href="hbo/hbo.html";

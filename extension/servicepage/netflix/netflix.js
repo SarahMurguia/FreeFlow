@@ -27,8 +27,8 @@ $(function() {
 
         // Get entered input
         var id = '1';
-        var user = $('n-email').val().trim(),
-            pass = $('n-pass').val().trim();
+        var user = $('#n-email').val().trim(),
+            pass = $('#n-pass').val().trim();
 		var done = false;
 		$.ajaxSetup({async: false});
         // Check email

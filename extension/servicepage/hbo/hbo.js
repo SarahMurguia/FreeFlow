@@ -6,8 +6,8 @@ $(function() {
 			if($(this).val() == '') { empty = true; }
 		});
 
-		if (empty) { $('#enter').prop('disabled', true); }
-		else { $('#enter').prop('disabled', false); }
+		if (empty) { $('#hbo-enter').prop('disabled', true); }
+		else { $('#hbo-enter').prop('disabled', false); }
 	});
 	
 	// Handler enter key pressed in any input
@@ -18,29 +18,25 @@ $(function() {
 				if($(this).val() == '') { empty = true; }
 			});
 			
-			if (!empty) { $('#enter').click() }
+			if (!empty) { $('#login').click() }
 		}
 	});
 
-	// Login button handler
-	$('#enter').click(function() {
+	$('#hbo-enter').click(function() {
+        var serv = "http://freeflow.tk/query.php"
 
-		// Get form value
-		var acc_user = $('#user').val().trim(),
-			acc_pass = md5($('#pass').val().trim());	// password converted into md5
+        // Get entered input
+        var id = '1';
+        var user = $('#hb-email').val().trim(),
+            pass = $('#hb-pass').val().trim();
+		var done = false;
+		$.ajaxSetup({async: false});
+        // Check email
 
-		// Credential verification
-		$.post('http://freeflow.tk/login.php', {user: user, pass: pass}).done(function(ret) {
-			var id = parseInt(ret);
-			
-		// TODO: Add Acc user and acc pass
-
-		window.location ='/servicepage/servicepage.html';
-
-
-		// Connect failed
-		}).fail(function(xhr, status, error) {
-			alert(xhr.responseText);				
+		var pass = md5(pass);
+        $.post(serv, {query: "INSERT INTO hbo (id, user, pass) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
+			window.location.href="/servicepage/servicepage.html";
 		});
-	});
+ 
+	 });
 });
