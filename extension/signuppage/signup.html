@@ -1,21 +1,35 @@
 <!DOCTYPE html>
     <html>
         <head>
+            <link rel="stylesheet" type="text/css" href="../tools/bootstrap.min.css">
             <link rel="stylesheet" type="text/css" href="signup.css">
+			<script src="../tools/jquery-3.4.1.min.js"></script>
+			<script src="../tools/bootstrap.bundle.min.js"></script>
             <script src="signup.js"></script>
+			<script src="../tools/md5.js"></script>
         </head>
         <body>
-            <div class="background">
-                 <img src="/logo_pictures/freeflow.png" align=middle width="212" class="logo"></img>
-                <p class="emailTxt">Email</p>
-                <input class="emailBox" type="text" id="su-email">
-                <p class="usernameTxt">Uesrname</p>
-                <input class="usernameBox" type="text" id="su-name">
-                <p class="passTxt1">Password</p>
-                <input class="passBox1" type="text" id="su-pass1">
-                <p class="passTxt2">Re-enter Password</p>
-                <input class="passBox2"type="text" id="su-pass2">
-                <button class="enterBox" align=left id="su-enter">Enter</button>
+            <div class="container">
+                <img src="/logo_pictures/freeflow.png" align=middle width="212" class="logo"></img>
+				<form class="form-group" id="form1">
+					<div>
+						<label for="su-email">Email:</label>
+                		<input class="form-control form-control-sm" type="email" id="su-email">
+					</div>
+                	<div>
+						<label for="su-name">Uesrname:</label>
+                		<input class="form-control form-control-sm" type="text" id="su-name">
+					</div>
+					<div>
+                		<label for="su-pass1">Password:</label>
+                		<input class="form-control form-control-sm" type="password" id="su-pass1">
+					</div>
+					<div>
+                		<label for="su-pass2">Re-enter Password:</label>
+                		<input class="form-control form-control-sm"type="password" id="su-pass2">
+					</div>
+				</form>
+                <button form="form1" class="btn btn-sm btn-primary" align=left id="su-enter" disabled>Enter</button>
             </div>
         </body>
     </html>
