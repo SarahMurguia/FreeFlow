@@ -18,35 +18,25 @@ $(function() {
 				if($(this).val() == '') { empty = true; }
 			});
 			
-			if (!empty) { $('#netflix-enter').click() }
+			if (!empty) { $('#login').click() }
 		}
 	});
 
-	 $('#netflix-enter').click(function() {
+	$('#netflix-enter').click(function() {
         var serv = "http://freeflow.tk/query.php"
 
         // Get entered input
-        var email = $('#n-email').val(),
-            pass = $('#n-pass').val();
+        var id = '1';
+        var user = $('n-email').val().trim(),
+            pass = $('n-pass').val().trim();
 		var done = false;
 		$.ajaxSetup({async: false});
         // Check email
-        $.post(serv, { query: "SELECT * FROM netflix WHERE email='" + email + "';" }, function(ret) {
-            if (ret == ' []') {
-				// Check username
-                $.post(serv, { query: "SELECT * FROM netflix WHERE user='" + user + "';" }, function(ret) {
-                    if (ret == ' []') {
-						var pass = md5(pass1);
-                        $.post(serv, {query: "INSERT INTO netflix (id, user, pass) VALUES ('" + "fakeuser" + "', '" + email + "', '" + pass + "');"}, function() {
-							window.location.href="/servicepage/servicepage.html";
-						});
-                    } else {
-                        alert('Username have been used!\n');
-                    }
-                });
-            } else {
-				alert('Email have been used!\n');
-            }
-        });
+
+		var pass = md5(pass);
+        $.post(serv, {query: "INSERT INTO netflix (id, user, pass) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
+			window.location.href="/servicepage/servicepage.html";
+		});
+ 
 	 });
 });
