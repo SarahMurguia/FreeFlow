@@ -108,34 +108,6 @@ body {
 }
 
 
-.netflixBox {
-	position: absolute;
-	width: 149px;
-	height: 75px;
-	left: 33px;
-	top: 13px;
-	background: #221F20;
-}
-
-.huluBox {
-	position: absolute;
-	width: 149px;
-	height: 76px;
-	left: 32px;
-	top: 99px;
-	background: #95F89E;
-}
-
-.hboBox{
-	position: absolute;
-	width: 149px;
-	height: 75px;
-	left: 33px;
-	top: 188px;
-	background: #303987;
-}
-
-
 
 
 
