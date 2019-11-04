@@ -45,3 +45,33 @@ body {
   padding: 16px;
   margin-bottom: 30px;
 }
+
+.service {
+  position: absolute;
+  width: 149px;
+  height: 75px;
+  left: 33px;
+  opacity: 0.5;
+}
+
+.service.netflix {
+  top: 8px;
+  background: #221F20;
+
+}
+.service.activated {
+  opacity: 1;
+}
+
+
+.service.hulu {
+  top: 94px;
+  background: #95F89E;
+}
+
+.service.hbo {
+  top: 183px;
+  background: #303987;
+}
+
+
