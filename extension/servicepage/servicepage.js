@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     	alert("netflix");
     	if (netflixCheck.classList.contains("activated") == false){
     		netflixCheck.classList.add("activated");
+            window.location.href="netflix/netflix.html";
+
     	}
 
     }, false);
