@@ -1,13 +1,13 @@
 $(function() {
-	// Check if form filled to enable login button
+	// Check if form filled to enable enter button
 	$('form input').keyup(function() {
 		var empty = false;
 		$('form input').each(function() {
 			if($(this).val() == '') { empty = true; }
 		});
 
-		if (empty) { $('#login').prop('disabled', true); }
-		else { $('#login').prop('disabled', false); }
+		if (empty) { $('#enter').prop('disabled', true); }
+		else { $('#enter').prop('disabled', false); }
 	});
 	
 	// Handler enter key pressed in any input
@@ -18,32 +18,24 @@ $(function() {
 				if($(this).val() == '') { empty = true; }
 			});
 			
-			if (!empty) { $('#login').click() }
+			if (!empty) { $('#enter').click() }
 		}
 	});
 
 	// Login button handler
-	$('#login').click(function() {
+	$('#enter').click(function() {
 
 		// Get form value
-		var user = $('#user').val().trim(),
-			pass = md5($('#pass').val().trim());	// password converted into md5
+		var acc_user = $('#user').val().trim(),
+			acc_pass = md5($('#pass').val().trim());	// password converted into md5
 
 		// Credential verification
 		$.post('http://freeflow.tk/login.php', {user: user, pass: pass}).done(function(ret) {
 			var id = parseInt(ret);
 			
-			// Login failed
-			if (id < 0) {
-				if (id == -1) { $('div.modal-body').text("Invalid password"); }
-				else { $('div.modal-body').text("Username '" + user + "' does not exist"); }
-				$('#modal').modal('show');
-			}
-
-			// Success
-			else {
-				window.location ='/servicepage/servicepage.html';
-			}
+		// TODO: Add Acc user and acc pass
+		window.location ='/servicepage/servicepage.html';
+	
 
 		// Connect failed
 		}).fail(function(xhr, status, error) {
