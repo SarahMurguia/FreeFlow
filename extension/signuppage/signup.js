@@ -29,22 +29,20 @@ $(function() {
             pass1 = $('#su-pass1').val(),
             pass2 = $('#su-pass2').val();
 		var done = false;
-
 		$.ajaxSetup({async: false});
         // Check password
         if (pass1 == pass2) {
             // Check email
             $.post(serv, { query: "SELECT * FROM users WHERE email='" + email + "';" }, function(ret) {
-				alert(ret);
                 if (ret == ' []') {
 					// Check username
                     $.post(serv, { query: "SELECT * FROM users WHERE user='" + user + "';" }, function(ret) {
-						alert(ret);
                         if (ret == ' []') {
 							var pass = md5(pass1);
-                            $.post(serv, {query: "INSERT INTO users (user, pass, email) VALUES ('" + user + "', '" + pass + "', '" + email + "');"}, function() {});
-                            window.location.href="/servicepage/servicepage.html";
-                            chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
+                            $.post(serv, {query: "INSERT INTO users (user, pass, email) VALUES ('" + user + "', '" + pass + "', '" + email + "');"}, function() {
+								window.location.href="/servicepage/servicepage.html";
+								chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
+							});
                         } else {
                             alert('Username have been used!\n');
                         }
