@@ -48,5 +48,5 @@ $(function() {
 				alert('Email have been used!\n');
             }
         });
-     
+	 });
 });

@@ -38,6 +38,7 @@ $(function() {
 					// Check username
                     $.post(serv, { query: "SELECT * FROM users WHERE user='" + user + "';" }, function(ret) {
                         if (ret == ' []') {
+                            //curr_user = new User(user, pass, email);
 							var pass = md5(pass1);
                             $.post(serv, {query: "INSERT INTO users (user, pass, email) VALUES ('" + user + "', '" + pass + "', '" + email + "');"}, function() {
 								window.location.href="/servicepage/servicepage.html";
