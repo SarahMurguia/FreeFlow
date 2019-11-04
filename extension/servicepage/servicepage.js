@@ -14,9 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
     	alert("netflix");
     	if (netflixCheck.classList.contains("activated") == false){
     		netflixCheck.classList.add("activated");
-            window.location.href="netflix/netflix.html";
-
     	}
+        // Check if info in data base
+        // if yes let user log in
+
+        // if no let user sign up
+        window.location.href="netflix/netflix.html";
 
     }, false);
 }, false);
@@ -29,6 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (huluCheck.classList.contains("activated") == false){
     		huluCheck.classList.add("activated");
     	}
+        // Check if info in data base
+        // if yes let user log in
+
+        // if no let user sign up
+        window.location.href="hulu/hulu.html";
     }, false);
 }, false);
 
@@ -42,6 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (hboCheck.classList.contains("activated") == false){
     		hboCheck.classList.add("activated");
     	}
+
+        // Check if info in data base
+        // if yes let user log in
+
+        // if no let user sign up
+        window.location.href="hbo/hbo.html";
 
     }, false);
 }, false);
