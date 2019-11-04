@@ -1,12 +1,13 @@
 @charset "utf-8";
 body {
 	width: 230px;
-	height: 300px;
+	height: 316px;
 	background: #42608F;
+	padding-top: 15px;
 }
 
 .container {
-	width: 230px;
+	min-width: 230px;
 }
 
 #login {
