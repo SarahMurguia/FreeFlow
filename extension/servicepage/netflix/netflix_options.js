@@ -7,11 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
     	chrome.storage.sync.get("user_id", function(result) {
 			if (!chrome.runtime.error) {
 				alert(result.user_id);
+				var serv = "http://freeflow.tk/query.php"
+
+				$.post(serv, { query: "SELECT * FROM netflix WHERE userid='" + result.user_id + "';" }, function(result) {
+					alert("in");
+					if (result == " []"){
+						alert("User not found");
+					}
+					else{
+						alert("User found");
+					}
+				});	
+
 			}
 		});
 
     	// check if info in database
     		// yess log in
+ 
 
     	// no ask for credentials
         window.location.href="/servicepage/netflix/netflix.html";
