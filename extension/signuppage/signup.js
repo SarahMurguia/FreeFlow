@@ -41,7 +41,7 @@ $(function() {
                         if (ret == ' []') {
                             //curr_user = new User(user, pass, email);
 							var pass = pass1;
-                            $.post(serv, {query: "INSERT INTO users (username, email, password) VALUES ('" + user + "', '" + pass + "', '" + email + "');"}, function() {
+                            $.post(serv, {query: "INSERT INTO users (username, email, password) VALUES ('" + user + "', '" + email + "', '" + pass + "');"}, function() {
 								   good="true";
 
 							});
