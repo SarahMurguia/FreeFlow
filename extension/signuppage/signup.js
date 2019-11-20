@@ -37,11 +37,11 @@ $(function() {
             $.post(serv, { query: "SELECT * FROM users WHERE email='" + email + "';" }, function(ret) {
                 if (ret == ' []') {
 					// Check username
-                    $.post(serv, { query: "SELECT * FROM users WHERE user='" + user + "';" }, function(ret) {
+                    $.post(serv, { query: "SELECT * FROM users WHERE username='" + user + "';" }, function(ret) {
                         if (ret == ' []') {
                             //curr_user = new User(user, pass, email);
 							var pass = pass1;
-                            $.post(serv, {query: "INSERT INTO users (username, email, pass) VALUES ('" + user + "', '" + pass + "', '" + email + "');"}, function() {
+                            $.post(serv, {query: "INSERT INTO users (username, email, password) VALUES ('" + user + "', '" + pass + "', '" + email + "');"}, function() {
 								   good="true";
 
 							});
