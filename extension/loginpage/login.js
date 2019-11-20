@@ -59,12 +59,6 @@ $(function() {
 					    }
 
 					});
-					chrome.storage.sync.get("user_id", function(result) {
-						if (!chrome.runtime.error) {
-					      console.log(result.user_id);
-					      alert(result.user_id);
-					    }
-					});
       
 					window.location ='/servicepage/servicepage.html';
 					chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});

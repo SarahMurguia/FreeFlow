@@ -4,10 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     checkConnect.addEventListener('click', function() {
 
 
-    	chrome.storage.local.get(['id_num'], function(result) {
-          console.log('Value currently is ' + result.key);
-          alert(result.key);
-        });
+    	chrome.storage.sync.get("user_id", function(result) {
+			if (!chrome.runtime.error) {
+				alert(result.user_id);
+			}
+		});
 
     	// check if info in database
     		// yess log in
