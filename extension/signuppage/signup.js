@@ -22,6 +22,7 @@ $(function() {
     });
 
     $('#su-enter').click(function() {
+        var good = "false";
         var serv = "http://freeflow.tk/query.php"
         // Get entered input
         var email = $('#su-email').val(),
@@ -39,10 +40,10 @@ $(function() {
                     $.post(serv, { query: "SELECT * FROM users WHERE user='" + user + "';" }, function(ret) {
                         if (ret == ' []') {
                             //curr_user = new User(user, pass, email);
-							var pass = md5(pass1);
-                            $.post(serv, {query: "INSERT INTO users (user, pass, email) VALUES ('" + user + "', '" + pass + "', '" + email + "');"}, function() {
-								window.location.href="/servicepage/servicepage.html";
-								chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
+							var pass = pass1;
+                            $.post(serv, {query: "INSERT INTO users (username, email, pass) VALUES ('" + user + "', '" + pass + "', '" + email + "');"}, function() {
+								   good="true";
+
 							});
                         } else {
                             alert('Username have been used!\n');
@@ -54,6 +55,11 @@ $(function() {
             });
         } else {
             alert('Password do not match!\n');
+        }
+        if (good == "true"){
+            alert("test");
+            window.location.href="/servicepage/servicepage.html";
+            chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
         }
     });
 });

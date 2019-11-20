@@ -34,7 +34,7 @@ $(function() {
 			pass = md5($('#pass').val().trim());	// password converted into md5
 
 		// Credential verification
-		$.post('http://freeflow.tk/login.php', {user: user, pass: pass}).done(function(ret) {
+		$.post('http://freeflow.tk/users.php', {user: user, pass: pass}).done(function(ret) {
 			var id = parseInt(ret);
 			
 			// Login failed
