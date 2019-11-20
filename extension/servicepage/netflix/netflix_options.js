@@ -2,6 +2,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var checkConnect = document.getElementById('no-connect');
     checkConnect.addEventListener('click', function() {
+
+
+    	chrome.storage.local.get(['id_num'], function(result) {
+          console.log('Value currently is ' + result.key);
+          alert(result.key);
+        });
+
     	// check if info in database
     		// yess log in
 

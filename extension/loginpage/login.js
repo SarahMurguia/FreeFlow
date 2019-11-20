@@ -31,7 +31,8 @@ $(function() {
 
 		// Get form value
 		var user = $('#user').val().trim(),
-			pass = md5($('#pass').val().trim());	// password converted into md5
+			pass = $('#pass').val().trim();	// password converted into md5
+        var serv = "http://freeflow.tk/query.php"
 
 		// Credential verification
 		$.post('http://freeflow.tk/users.php', {username: user, password: pass}).done(function(ret) {
@@ -46,8 +47,28 @@ $(function() {
 
 			// Success
 			else {
-				window.location ='/servicepage/servicepage.html';
-				chrome.browserAction.setPopup({popup: '/servicepage/servicepage.html'})
+				$.post(serv, { query: "SELECT userid FROM users WHERE username='" + user + "';" }, function(userid) {
+                    var obj = JSON.parse(userid);
+                    var tempid = obj[0].userid;
+                    alert(tempid);
+			
+					
+					chrome.storage.sync.set({ "user_id" : tempid}, function() {
+					    if (chrome.runtime.error) {
+					      console.log("Runtime error.");
+					    }
+
+					});
+					chrome.storage.sync.get("user_id", function(result) {
+						if (!chrome.runtime.error) {
+					      console.log(result.user_id);
+					      alert(result.user_id);
+					    }
+					});
+      
+					window.location ='/servicepage/servicepage.html';
+					chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
+				});
 			}
 
 		// Connect failed
