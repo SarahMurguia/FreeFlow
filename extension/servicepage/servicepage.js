@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // if yes let user log in service
 
         // if no let user sign up
-        window.location.href="netflix/netflix.html";
+        window.location.href="netflix/netflix_options.html";
 
     }, false);
 }, false);
