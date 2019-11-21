@@ -39,6 +39,14 @@ $(function() {
 					window.location.href="/servicepage/servicepage.html";
 				});
 
+
+				chrome.storage.sync.set({ "netflix_active" : "true"}, function() {
+					if (chrome.runtime.error) {
+					   	console.log("Runtime error.");
+					}
+
+				});
+
 			}
 		});
         

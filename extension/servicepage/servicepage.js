@@ -11,16 +11,22 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var netflixCheck = document.getElementById('sp-netflix');
     netflixCheck.addEventListener('click', function() {
-    	if (netflixCheck.classList.contains("activated") == false){
-    		netflixCheck.classList.add("activated");
-    	}
+        chrome.storage.sync.get("netflix_added", function(result) {
+            if (!chrome.runtime.error) {
+                if (result.netflix_added == "true"){
+                    netflixCheck.classList.add("activated");
+                }
+            }
+                    
+        });
+
         // Check if info in data base
         // if yes let user log in service
 
         // if no let user sign up
         window.location.href="netflix/netflix_options.html";
 
-    }, false);
+    }, true);
 }, false);
 
 // Hulu Listener
@@ -56,3 +62,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }, false);
 }, false);
+
+
+// active listener
+chrome.storage.onChanged.addListener(function(changes, area) {
+    if (area == "sync" && "netflix_active" in changes) {
+        var netflixCheck = document.getElementById('sp-netflix');
+        if (changes.netflix_active =="true"){
+            netflixCheck.classList.add("activated");
+        }
+        else{
+            netflixCheck.classList.delete("activated");
+        }
+       
+    }
+});
