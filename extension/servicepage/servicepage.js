@@ -9,33 +9,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Netflix Listener
 document.addEventListener('DOMContentLoaded', function() {
-    chrome.storage.sync.get("netflix_active", function(result) {
-        var netflixCheck = document.getElementById('sp-netflix');
+    var netflixCheck = document.getElementById('sp-netflix');
 
+    chrome.storage.sync.get("netflix_active", function(result) {
         if (!chrome.runtime.error) {
             if (result.netflix_active == "true"){
-
-                alert("active");
                 netflixCheck.classList.add("activated");
                 document.getElementById('sp-netflix').style.opacity = 1;
             }
             else{
-
-                alert("not active");
                 netflixCheck.classList.delete("activated");
                 document.getElementById('sp-netflix').style.opacity = 0.5;
             }
         }
                     
     });
-    var netflixCheck = document.getElementById('sp-netflix');
-    netflixCheck.addEventListener('click', function() {
-        alert("normal");
-        
-        // Check if info in data base
-        // if yes let user log in service
 
-        // if no let user sign up
+    netflixCheck.addEventListener('click', function() {
         window.location.href="netflix/netflix_options.html";
 
     }, true);
@@ -44,15 +34,23 @@ document.addEventListener('DOMContentLoaded', function() {
 // Hulu Listener
 document.addEventListener('DOMContentLoaded', function() {
     var huluCheck = document.getElementById('sp-hulu');
-    huluCheck.addEventListener('click', function() {
-        if (huluCheck.classList.contains("activated") == false){
-    		huluCheck.classList.add("activated");
-    	}
-        // Check if info in data base
-        // if yes let user log in service
 
-        // if no let user sign up
-        window.location.href="hulu/hulu.html";
+    chrome.storage.sync.get("hulu_active", function(result) {
+        if (!chrome.runtime.error) {
+            if (result.hulu_active == "true"){
+                huluCheck.classList.add("activated");
+                document.getElementById('sp-hulu').style.opacity = 1;
+            }
+            else{
+                huluCheck.classList.delete("activated");
+                document.getElementById('sp-hulu').style.opacity = 0.5;
+            }
+        }
+                    
+    });
+
+    huluCheck.addEventListener('click', function() {
+        window.location.href="hulu/hulu_options.html";
     }, false);
 }, false);
 
@@ -61,16 +59,24 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var hboCheck = document.getElementById('sp-hbo');
 
+   chrome.storage.sync.get("hbo_active", function(result) {
+        if (!chrome.runtime.error) {
+            if (result.hbo_active == "true"){
+                alert("hbo_active");
+                hboCheck.classList.add("activated");
+                document.getElementById('sp-hbo').style.opacity = 1;
+            }
+            else{
+                alert("hbo not active");
+                hboCheck.classList.delete("activated");
+                document.getElementById('sp-hbo').style.opacity = 0.5;
+            }
+        }
+                    
+    });
+
     hboCheck.addEventListener('click', function() {
-        if (hboCheck.classList.contains("activated") == false){
-    		hboCheck.classList.add("activated");
-    	}
-
-        // Check if info in data base
-        // if yes let user log in to service
-
-        // if no let user sign up
-        window.location.href="hbo/hbo.html";
+        window.location.href="hbo/hbo_options.html";
 
     }, false);
 }, false);

@@ -23,19 +23,27 @@ $(function() {
 	});
 
 	$('#hbo-enter').click(function() {
-        var serv = "http://freeflow.tk/query.php"
+   		// get user id
+        chrome.storage.sync.get("user_id", function(result) {
+			if (!chrome.runtime.error) {
+				var id = result.user_id;
+		        var user = $('#hb-email').val().trim(),
+            		pass = $('#hb-pass').val().trim();
+				var done = false;
+				$.ajaxSetup({async: false});
+				var serv = "http://freeflow.tk/query.php"
+				alert("hbo test");
+		        $.post(serv, {query: "INSERT INTO hbo (userid, service_email, service_password) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
+					window.location.href="/servicepage/servicepage.html";
+				});
 
-        // Get entered input
-        var id = '1';
-        var user = $('#hb-email').val().trim(),
-            pass = $('#hb-pass').val().trim();
-		var done = false;
-		$.ajaxSetup({async: false});
-        // Check email
+				chrome.storage.sync.set({ "hbo_active" : "true"}, function() {
+					if (chrome.runtime.error) {
+					   	console.log("Runtime error.");
+					}
+				});
 
-		var pass = md5(pass);
-        $.post(serv, {query: "INSERT INTO hbo (id, user, pass) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
-			window.location.href="/servicepage/servicepage.html";
+			}
 		});
  
 	 });

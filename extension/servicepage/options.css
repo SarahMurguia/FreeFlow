@@ -13,7 +13,7 @@ body {
 }
 
 
-.connectBox {
+.Box1 {
   position: absolute;
   width: 107px;
   height: 28px;
@@ -31,7 +31,7 @@ body {
 
 
 
-.deleteBox {
+.Box2 {
   position: absolute;
   width: 107px;
   height: 28px;

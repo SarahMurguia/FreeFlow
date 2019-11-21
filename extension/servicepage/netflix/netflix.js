@@ -50,8 +50,6 @@ $(function() {
 			}
 		});
         
-        // Check email
-
 		
 	 });
 });

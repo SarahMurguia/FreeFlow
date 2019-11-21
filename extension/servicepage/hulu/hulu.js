@@ -23,19 +23,27 @@ $(function() {
 	});
 
 	$('#hulu-enter').click(function() {
-        var serv = "http://freeflow.tk/query.php"
+   		// get user id
+        chrome.storage.sync.get("user_id", function(result) {
+			if (!chrome.runtime.error) {
+				var id = result.user_id;
+		        var user = $('#h-email').val().trim(),
+            		pass = $('#h-pass').val().trim();
+				var done = false;
+				$.ajaxSetup({async: false});
+				var serv = "http://freeflow.tk/query.php"
+				alert("hulu test");
+		        $.post(serv, {query: "INSERT INTO hulu (userid, service_email, service_password) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
+					window.location.href="/servicepage/servicepage.html";
+				});
 
-        // Get entered input
-        var id = '1';
-        var user = $('#h-email').val().trim(),
-            pass = $('#h-pass').val().trim();
-		var done = false;
-		$.ajaxSetup({async: false});
-        // Check email
+				chrome.storage.sync.set({ "hulu_active" : "true"}, function() {
+					if (chrome.runtime.error) {
+					   	console.log("Runtime error.");
+					}
+				});
 
-		var pass = md5(pass);
-        $.post(serv, {query: "INSERT INTO hulu (id, user, pass) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
-			window.location.href="/servicepage/servicepage.html";
+			}
 		});
  
 	 });
