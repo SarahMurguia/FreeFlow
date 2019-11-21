@@ -59,10 +59,6 @@ body {
   background: #221F20;
 
 }
-.service.activated {
-  opacity: 1;
-}
-
 
 .service.hulu {
   top: 94px;

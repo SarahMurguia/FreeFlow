@@ -22,7 +22,7 @@ $(function() {
 		}
 	});
 
-	$('#netflix-enter').click(function() {
+	$('#netflix-enter').click(function(ips) {
         // Get entered input
         chrome.storage.sync.get("user_id", function(result) {
 			if (!chrome.runtime.error) {
@@ -35,7 +35,6 @@ $(function() {
 		        $.post(serv, {query: "INSERT INTO netflix (userid, service_email, service_password) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
 					window.location.href="/servicepage/servicepage.html";
 				});
-
 
 				chrome.storage.sync.set({ "netflix_active" : "true"}, function() {
 					if (chrome.runtime.error) {
@@ -50,3 +49,7 @@ $(function() {
 		
 	 });
 });
+
+
+
+

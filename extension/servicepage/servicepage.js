@@ -14,11 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.sync.get("netflix_active", function(result) {
         if (!chrome.runtime.error) {
             if (result.netflix_active == "true"){
-                netflixCheck.classList.add("activated");
                 document.getElementById('sp-netflix').style.opacity = 1;
             }
             else{
-                netflixCheck.classList.delete("activated");
                 document.getElementById('sp-netflix').style.opacity = 0.5;
             }
         }
@@ -38,11 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.sync.get("hulu_active", function(result) {
         if (!chrome.runtime.error) {
             if (result.hulu_active == "true"){
-                huluCheck.classList.add("activated");
                 document.getElementById('sp-hulu').style.opacity = 1;
             }
             else{
-                huluCheck.classList.delete("activated");
                 document.getElementById('sp-hulu').style.opacity = 0.5;
             }
         }
@@ -62,11 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
    chrome.storage.sync.get("hbo_active", function(result) {
         if (!chrome.runtime.error) {
             if (result.hbo_active == "true"){
-                hboCheck.classList.add("activated");
                 document.getElementById('sp-hbo').style.opacity = 1;
             }
             else{
-                hboCheck.classList.delete("activated");
                 document.getElementById('sp-hbo').style.opacity = 0.5;
             }
         }
@@ -78,4 +72,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }, false);
 }, false);
+
 

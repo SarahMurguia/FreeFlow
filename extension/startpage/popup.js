@@ -1,5 +1,6 @@
 // Event Listener for the Sign Up Page
 document.addEventListener('DOMContentLoaded', function() {
+	
     var checkSignUp = document.getElementById('signup');
     checkSignUp.addEventListener('click', function() {
         window.location.href="/signuppage/signup.html";

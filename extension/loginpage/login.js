@@ -49,9 +49,7 @@ $(function() {
 			else {
 				$.post(serv, { query: "SELECT userid FROM users WHERE username='" + user + "';" }, function(userid) {
                     var obj = JSON.parse(userid);
-                    var tempid = obj[0].userid;
-                    alert(tempid);
-			
+                    var tempid = obj[0].userid;			
 					
 					chrome.storage.sync.set({ "user_id" : tempid}, function() {
 					    if (chrome.runtime.error) {
