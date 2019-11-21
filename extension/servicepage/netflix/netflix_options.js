@@ -1,13 +1,12 @@
-// Event Listener for the Connect Button
-document.addEventListener('DOMContentLoaded', function() {
-    var checkConnect = document.getElementById('no-connect');
-    checkConnect.addEventListener('click', function() {
-
-
-    	chrome.storage.sync.get("user_id", function(result) {
+$(function() {
+    $('#no-connect').click(function() {
+       var found_cred = false;
+	   	chrome.storage.sync.get("user_id", function(result) {
 			if (!chrome.runtime.error) {
 				alert(result.user_id);
 				var serv = "http://freeflow.tk/query.php"
+				alert("test");
+				$.ajaxSetup({async: false});
 
 				$.post(serv, { query: "SELECT * FROM netflix WHERE userid='" + result.user_id + "';" }, function(result) {
 					alert("in");
@@ -16,20 +15,27 @@ document.addEventListener('DOMContentLoaded', function() {
 					}
 					else{
 						alert("User found");
+						fount_cred = true;
+						// TODO:
+						//inject username pass onto site
 					}
 				});	
 
 			}
 		});
 
-    	// check if info in database
-    		// yess log in
- 
+	    	// check if info in database
+	    		// yess log in
+	 
 
-    	// no ask for credentials
-        window.location.href="/servicepage/netflix/netflix.html";
-    }, false);
-}, false);
+	   // no ask for credentials
+	   if (found_cred == false){
+	   		window.location.href="/servicepage/netflix/netflix.html";
+	   }
+   	});
+
+});
+
 
 // Event Listener for the Login In Page
 document.addEventListener('DOMContentLoaded', function() {

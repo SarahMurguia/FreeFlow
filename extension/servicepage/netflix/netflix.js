@@ -26,17 +26,24 @@ $(function() {
         var serv = "http://freeflow.tk/query.php"
 
         // Get entered input
-        var id = '1';
-        var user = $('#n-email').val().trim(),
-            pass = $('#n-pass').val().trim();
-		var done = false;
-		$.ajaxSetup({async: false});
+        chrome.storage.sync.get("user_id", function(result) {
+			if (!chrome.runtime.error) {
+				var id = result.user_id;
+		        var user = $('#n-email').val().trim(),
+		            pass = $('#n-pass').val().trim();
+				var done = false;
+				$.ajaxSetup({async: false});
+				var serv = "http://freeflow.tk/query.php"
+				alert("test");
+		        $.post(serv, {query: "INSERT INTO netflix (userid, service_email, service_password) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
+					window.location.href="/servicepage/servicepage.html";
+				});
+
+			}
+		});
+        
         // Check email
 
-		var pass = md5(pass);
-        $.post(serv, {query: "INSERT INTO netflix (id, user, pass) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
-			window.location.href="/servicepage/servicepage.html";
-		});
- 
+		
 	 });
 });
