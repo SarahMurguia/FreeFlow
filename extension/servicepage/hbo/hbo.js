@@ -32,7 +32,6 @@ $(function() {
 				var done = false;
 				$.ajaxSetup({async: false});
 				var serv = "http://freeflow.tk/query.php"
-				alert("hbo test");
 		        $.post(serv, {query: "INSERT INTO hbo (userid, service_email, service_password) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
 					window.location.href="/servicepage/servicepage.html";
 				});

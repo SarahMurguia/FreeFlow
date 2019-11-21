@@ -62,12 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
    chrome.storage.sync.get("hbo_active", function(result) {
         if (!chrome.runtime.error) {
             if (result.hbo_active == "true"){
-                alert("hbo_active");
                 hboCheck.classList.add("activated");
                 document.getElementById('sp-hbo').style.opacity = 1;
             }
             else{
-                alert("hbo not active");
                 hboCheck.classList.delete("activated");
                 document.getElementById('sp-hbo').style.opacity = 0.5;
             }

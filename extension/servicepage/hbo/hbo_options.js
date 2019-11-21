@@ -4,12 +4,11 @@ $(function() {
 		var found_cred = false;
 	   	chrome.storage.sync.get("user_id", function(result) {
 			if (!chrome.runtime.error) {
-				alert(result.user_id);
 				var serv = "http://freeflow.tk/query.php"
 				$.ajaxSetup({async: false});
 				$.post(serv, { query: "SELECT * FROM hbo WHERE userid='" + result.user_id + "';" }, function(result) {
 					if (result == " []"){
-						alert("User not found");
+						alert("HBO Credentials Needed");
 						window.location.href="/servicepage/hbo/hbo.html";
 					}
 					else{

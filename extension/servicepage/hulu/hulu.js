@@ -32,7 +32,6 @@ $(function() {
 				var done = false;
 				$.ajaxSetup({async: false});
 				var serv = "http://freeflow.tk/query.php"
-				alert("hulu test");
 		        $.post(serv, {query: "INSERT INTO hulu (userid, service_email, service_password) VALUES ('" + id + "', '" + user + "', '" + pass + "');"}, function() {
 					window.location.href="/servicepage/servicepage.html";
 				});
