@@ -3,7 +3,7 @@
     "version": "0.01",
     "manifest_version": 2,
     "description": "FreeFlow Chrome Extension",
-    "permissions": ["management", "http://freeflow.tk/*", "http://*.freeflow.tk/*", "storage", "system_network"],
+    "permissions": ["management", "http://freeflow.tk/*", "http://*.freeflow.tk/*", "storage"],
 
     "icons": {
         "16": "pictures/ff_logo/16.png",
