@@ -13,20 +13,27 @@ $(function() {
 					alert("in");
 					if (result == " []"){
 						alert("User not found");
+						window.location.href="/servicepage/netflix/netflix.html";
 					}
 					else{
 						alert("User found");
 						fount_cred = true;
+						chrome.storage.sync.set({ "netflix_active" : "true"}, function() {
+							if (chrome.runtime.error) {
+								console.log("Runtime error.");
+							}
+
+						});
+
+						window.location.href="/servicepage/servicepage.html";
+
+
 					}
 				});	
 
 			}
 		});
 
-	   // no ask for credentials
-	   if (found_cred == false){
-	   		window.location.href="/servicepage/netflix/netflix.html";
-	   }
 	});
 
 	$('#no-delete').click(function() {
@@ -42,10 +49,13 @@ $(function() {
 			}
 		});
 
+		chrome.storage.sync.set({ "netflix_active" : "false"}, function() {
+			if (chrome.runtime.error) {
+				console.log("Runtime error.");
+			}
 
-
-
-	  
+		});
+		window.location.href="/servicepage/servicepage.html";
 	});
 
 });

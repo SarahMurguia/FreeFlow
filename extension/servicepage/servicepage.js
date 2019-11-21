@@ -9,17 +9,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Netflix Listener
 document.addEventListener('DOMContentLoaded', function() {
+    chrome.storage.sync.get("netflix_active", function(result) {
+        var netflixCheck = document.getElementById('sp-netflix');
+
+        if (!chrome.runtime.error) {
+            if (result.netflix_active == "true"){
+
+                alert("active");
+                netflixCheck.classList.add("activated");
+                document.getElementById('sp-netflix').style.opacity = 1;
+            }
+            else{
+
+                alert("not active");
+                netflixCheck.classList.delete("activated");
+                document.getElementById('sp-netflix').style.opacity = 0.5;
+            }
+        }
+                    
+    });
     var netflixCheck = document.getElementById('sp-netflix');
     netflixCheck.addEventListener('click', function() {
-        chrome.storage.sync.get("netflix_added", function(result) {
-            if (!chrome.runtime.error) {
-                if (result.netflix_added == "true"){
-                    netflixCheck.classList.add("activated");
-                }
-            }
-                    
-        });
-
+        alert("normal");
+        
         // Check if info in data base
         // if yes let user log in service
 
@@ -63,17 +75,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);
 }, false);
 
-
-// active listener
-chrome.storage.onChanged.addListener(function(changes, area) {
-    if (area == "sync" && "netflix_active" in changes) {
-        var netflixCheck = document.getElementById('sp-netflix');
-        if (changes.netflix_active =="true"){
-            netflixCheck.classList.add("activated");
-        }
-        else{
-            netflixCheck.classList.delete("activated");
-        }
-       
-    }
-});
