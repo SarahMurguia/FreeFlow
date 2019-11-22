@@ -1,0 +1,18 @@
+html {
+  overflow-x: hidden;
+}
+  
+body {
+	width: 230px;
+	height: 316px;
+	background: #42608F;
+	padding-top: 15px;
+}
+
+.container {
+	min-width: 230px;
+}
+
+#passreset-enter {
+    margin-left: 140px;
+}
