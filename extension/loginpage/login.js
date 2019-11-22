@@ -32,40 +32,30 @@ $(function() {
 		// Get form value
 		var user = $('#user').val().trim(),
 			pass = $('#pass').val().trim();	// password converted into md5
+		$.ajaxSetup({async: false});
+
         var serv = "http://freeflow.tk/query.php"
 
 		// Credential verification
-		$.post('http://freeflow.tk/users.php', {username: user, password: pass}).done(function(ret) {
-			var id = parseInt(ret);
-			
-			// Login failed
-			if (id < 0) {
-				if (id == -1) { $('div.modal-body').text("Invalid password"); }
-				else { $('div.modal-body').text("Username '" + user + "' does not exist"); }
-				$('#modal').modal('show');
-			}
+		$.post(serv, { query: "SELECT * FROM users WHERE username='" + user + "';" }, function(ret) {
+            var obj = JSON.parse(ret);
+            var line = obj[0];	
 
-			// Success
-			else {
-				$.post(serv, { query: "SELECT userid FROM users WHERE username='" + user + "';" }, function(userid) {
-                    var obj = JSON.parse(userid);
-                    var tempid = obj[0].userid;			
-					
-					chrome.storage.sync.set({ "user_id" : tempid}, function() {
-					    if (chrome.runtime.error) {
-					      console.log("Runtime error.");
-					    }
-
-					});
-      
-					window.location ='/servicepage/servicepage.html';
-					chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
+            if (line.username == user && line.password == pass){
+            	chrome.storage.sync.set({ "user_id" : line.userid}, function() {
+				    if (chrome.runtime.error) {
+				      console.log("Runtime error.");
+				    }
 				});
+				window.location ='/servicepage/servicepage.html';
+				chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
+            }		
+			
+			else{
+				alert("Username or Password Incorrect");
 			}
-
-		// Connect failed
-		}).fail(function(xhr, status, error) {
-			alert(xhr.responseText);				
 		});
+		
+
 	});
 });
