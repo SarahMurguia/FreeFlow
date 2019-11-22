@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var completePassChange = document.getElementById("p-enter");
 
     completePassChange.addEventListener('click', function() {
-        enterOk = "false";
         // Get entered input
         var currPass = document.getElementById("p-curr").value;
         var pass1 = document.getElementById("p-pass1").value;
@@ -10,42 +9,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (pass1 == pass2){
             // TODO: Check that curr pass matches database
-            chrome.storage.sync.get("user_id", function(result) {
+            chrome.storage.sync.get("user_id", function(ret1) {
                 if(!chrome.runtime.error) {
                     var serv = "http://freeflow.tk/query.php"
                     $.ajaxSetup({async: false});
 
-                    $.post(serv, { query: "SELECT password FROM users WHERE userid='" + result.user_id + "';"}, function(result) {
-                        var obj = JSON.parse(result);
+                    $.post(serv, { query: "SELECT password FROM users WHERE userid='" + ret1.user_id + "';"}, function(ret2) {
+                        var obj = JSON.parse(ret2);
                         var password = obj[0].password;	
                         if(password == currPass) {
                             alert("Current password matches: " + password + " " + currPass);
+
+                            alert("in here")
+                            chrome.storage.sync.get("user_id", function(ret3) {
+                                if(!chrome.runtime.error) {
+                                    alert(ret3.user_id);
+                                    alert("UPDATE users SET password='" + pass1 +"' WHERE userid='" + ret3.user_id + "';");
+
+                                    var serv = "http://freeflow.tk/query.php";
+                                    $.ajaxSetup({async: false});
+                                    $.post(serv, { query: "UPDATE users SET password='" + pass1 +"' WHERE userid='" + ret3.user_id + "';"});
+                                }
+                            });
+
+                            window.location.href="/accountpage/accountpage.html";
+                       
                         } else {
                             alert("Current password does not match: " + password + " " + currPass);
                         }
                     });
                 }
             });
-            alert("enterOk set to true");
-            enterOk = "true";
+
         }
    
-        if (enterOk == "true"){
-            alert("enterOk = true");
-            chrome.storage.sync.get("user_id", function(result) {
-                if(!chrome.runtime.error) {
-                    alert("is this working");
-                    var serv = "http://freeflow.tk/query.php"
-                    $.ajaxSetup({async: false});
 
-                    $.post(serv, { query: "UPDATE users SET password='" + pass1 +"' WHERE userid='" + user_id + "';"});
-                    alert("password updated");
-                }
-            });
-            window.location.href="/accountpage/accountpage.html";
-        }
         else{
-            alert("Passwords dont match!");
+            alert("New Passwords dont match!");
         }
 
     }, false);
