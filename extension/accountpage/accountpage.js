@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var checkHousehold = document.getElementById('ap-house');
     checkHousehold.addEventListener('click', function() {
-        window.location.href="/household/household.html";
+        window.location.href="/householdpage/service.html";
     }, false);
 }, false);
 

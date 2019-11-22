@@ -1,0 +1,16 @@
+html {
+  overflow-x: hidden;
+}
+  
+body {
+  position: relative;
+  width: 230px;
+  height: 316px;
+  background: #426087;
+  left: 0px;
+  top: 0px;
+}
+
+.container {
+	width: 230px;
+}
