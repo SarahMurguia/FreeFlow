@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function() {
+	var checkForgotPassword = document.getElementById('forgotpass');
+	checkForgotPassword.addEventListener('click', function() {
+		window.location.href="/loginpage/forgotpasspage.html";
+	}, false);
+}, false);
+
 $(function() {
 	// Check if form filled to enable login button
 	$('form input').keyup(function() {
@@ -20,10 +27,6 @@ $(function() {
 			
 			if (!empty) { $('#login').click() }
 		}
-	});
-
-	// Forgot Password button handler
-	$('#fpass').click(function() {
 	});
 
 	// Login button handler
