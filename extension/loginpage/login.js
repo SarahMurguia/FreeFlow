@@ -1,10 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-	var checkForgotPassword = document.getElementById('forgotpass');
-	checkForgotPassword.addEventListener('click', function() {
-		window.location.href="/loginpage/forgotpasspage.html";
-	}, false);
-}, false);
-
 $(function() {
 	// Check if form filled to enable login button
 	$('form input').keyup(function() {
@@ -17,7 +10,7 @@ $(function() {
 		else { $('#login').prop('disabled', false); }
 	});
 	
-	// Handler enter key pressed in any input
+	// Handle enter key pressed in any input
 	$('form input').keypress(function(e) {
 		if (e.keyCode == 13) {
 			var empty = false;
@@ -27,6 +20,11 @@ $(function() {
 			
 			if (!empty) { $('#login').click() }
 		}
+	});
+	
+	// Forget button handler
+	$('#forgotpass').click(function() {
+		window.location.href="/loginpage/forgotpasspage.html";
 	});
 
 	// Login button handler

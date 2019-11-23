@@ -3,6 +3,7 @@ html {
 }
   
 body {
+  font-family: 'Roboto', serif;
   position: relative;
   width: 230px;
   height: 316px;
@@ -13,4 +14,23 @@ body {
 
 .container {
 	width: 230px;
+}
+
+.btn-toolbar .btn {
+	background-color: rgba(255,255,255,0.50);
+	height: 45px;
+}
+
+.btn-toolbar .btn:first-child {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.btn-toolbar .btn:last-child {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.special .btn {
+	flex: 1;
 }
