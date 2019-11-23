@@ -5,11 +5,10 @@
 <!-- JQuery/Bootstrap (Material Design) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 <link rel="stylesheet" href="/tools/bootstrap-material-design.min.css">
-<link rel="stylesheet" href="/tools/bootstrap.min.css">
 <script src="/tools/jquery-3.4.1.min.js"></script>
 <script src="/tools/popper.min.js"></script>
-<script src="/tools/bootstrap.bundle.min.js"></script>
 <script src="/tools/bootstrap-material-design.min.js"></script>
+<!-- Default body CSS -->
 <link rel="stylesheet" type="text/css" href="/tools/default.css">
 <!-- Local CSS/JS -->
 <link rel="stylesheet" type="text/css" href="service.css">
@@ -17,7 +16,13 @@
 </head>
 
 <body style="padding-top: 20px">
-<div class="container"> 
+<div class="container">
+  <!-- Toolbar -->
+  <div class="btn-toolbar special">
+    <button id="back" type="button" class="btn btn-sm"> <i class="material-icons">arrow_back</i> </button>
+    <button id="home" type="button" class="btn btn-sm"> <i class="material-icons">home</i> </button>
+    <button id="refresh" type="button" class="btn btn-sm"> <i class="material-icons">refresh</i> </button>
+  </div>
   <!-- Tab -->
   <ul class="nav nav-tabs nav-justified" id="slist" role="tablist">
     <li class="nav-item"> <a class="nav-link active" id="nftab" data-toggle="tab" role="tab" href="#nf" aria-controls="nf" aria-selected="true"> <img alt="Netflix" src="netflix.svg" class="img-fluid" width="30"> </a> </li>
@@ -25,7 +30,7 @@
     <li class="nav-item"> <a class="nav-link" id="hbtab" data-toggle="tab" role="tab" href="#hb" aria-controls="hb" aria-selected="true"> <img alt="HBO" src="hbo.svg" class="img-fluid" width="30"> </a> </li>
   </ul>
   <!-- Tab Content -->
-  <div class="tab-content" id="scontent">
+  <div class="tab-content" id="scontent"> 
     <!-- Netflix -->
     <div class="tab-pane fade show active" id="nf" role="tabpanel" aria-labelledby="nftab">
       <div class="row">
@@ -33,21 +38,21 @@
         <div align="center" class="col-12 switch">
           <label for="setnf1"> <span class="badge badge-danger">Off</span> </label>
           <label>
-            <input id="setnf1" type="checkbox" checked>
+            <input id="setnf1" type="checkbox">
             <span class="badge badge-success">On</span> </label>
         </div>
         <div class="col-12"> Network 2:&nbsp; <span class="badge badge-success" id="nf2">Active</span> </div>
         <div align="center" class="col-12 switch">
           <label for="setnf2"> <span class="badge badge-danger">Off</span> </label>
           <label>
-            <input id="setnf2" type="checkbox" checked>
+            <input id="setnf2" type="checkbox">
             <span class="badge badge-success">On</span> </label>
         </div>
         <div class="col-12"> Network 3:&nbsp; <span class="badge badge-danger" id="nf3">Inactive</span> </div>
         <div align="center" class="col-12 switch">
           <label for="setnf3"> <span class="badge badge-danger">Off</span> </label>
           <label>
-            <input id="setnf3" type="checkbox" checked>
+            <input id="setnf3" type="checkbox">
             <span class="badge badge-success">On</span> </label>
         </div>
       </div>
@@ -59,21 +64,21 @@
         <div align="center" class="col-12 switch">
           <label for="sethl1"> <span class="badge badge-danger">Off</span> </label>
           <label>
-            <input id="sethl1" type="checkbox" checked>
+            <input id="sethl1" type="checkbox">
             <span class="badge badge-success">On</span> </label>
         </div>
         <div class="col-12"> Network 2:&nbsp; <span class="badge badge-success" id="hl2">Active</span> </div>
         <div align="center" class="col-12 switch">
           <label for="sethl2"> <span class="badge badge-danger">Off</span> </label>
           <label>
-            <input id="sethl2" type="checkbox" checked>
+            <input id="sethl2" type="checkbox">
             <span class="badge badge-success">On</span> </label>
         </div>
         <div class="col-12"> Network 3:&nbsp; <span class="badge badge-danger" id="hl3">Inactive</span> </div>
         <div align="center" class="col-12 switch">
           <label for="sethl3"> <span class="badge badge-danger">Off</span> </label>
           <label>
-            <input id="sethl3" type="checkbox" checked>
+            <input id="sethl3" type="checkbox">
             <span class="badge badge-success">On</span> </label>
         </div>
       </div>
@@ -85,27 +90,26 @@
         <div align="center" class="col-12 switch">
           <label for="sethb1"> <span class="badge badge-danger">Off</span> </label>
           <label>
-            <input id="sethb1" type="checkbox" checked>
+            <input id="sethb1" type="checkbox">
             <span class="badge badge-success">On</span> </label>
         </div>
         <div class="col-12"> Network 2:&nbsp; <span class="badge badge-success" id="hb2">Active</span> </div>
         <div align="center" class="col-12 switch">
           <label for="sethb2"> <span class="badge badge-danger">Off</span> </label>
           <label>
-            <input id="sethb2" type="checkbox" checked>
+            <input id="sethb2" type="checkbox">
             <span class="badge badge-success">On</span> </label>
         </div>
         <div class="col-12"> Network 3:&nbsp; <span class="badge badge-danger" id="hb3">Inactive</span> </div>
         <div align="center" class="col-12 switch">
           <label for="sethb3"> <span class="badge badge-danger">Off</span> </label>
           <label>
-            <input id="sethb3" type="checkbox" checked>
+            <input id="sethb3" type="checkbox">
             <span class="badge badge-success">On</span> </label>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 </body>
 </html>
