@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var checkHousehold = document.getElementById('ap-house');
     checkHousehold.addEventListener('click', function() {
-        window.location.href="/householdpage/service.html";
+        window.location.href="/householdpage/household.html";
     }, false);
 }, false);
 
