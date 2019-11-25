@@ -107,23 +107,36 @@ $(function () { // Wait til all DOM loaded
 		}
 	});
 
-	/******************** BUTTONS HANDLER ********************/
-	// Toolbar buttons
+	/******************** TOOLBAR BUTTONS ********************/
 	$('#back').click(function () {
 		window.location = '/accountpage/accountpage.html';
+	});
+	$('#home').click(function () {
+		window.location = '/servicepage/servicepage.html';
 	});
 	$('#refresh').click(function () {
 		getStat();
 	});
+	
+	/******************** ADD ACCOUNT BUTTONS ********************/
+	$('#addnf').click(function () {
+		window.location = '/servicepage/netflix/netflix.html';
+	})
+	$('#addhl').click(function () {
+		window.location = '/servicepage/hulu/hulu.html';
+	})
+	$('#addhb').click(function () {
+		window.location = '/servicepage/hbo/hbo.html';
+	})
 
-	// All more(...) buttons
+	/******************** MORE(...) BUTTONS ********************/
 	$('.more').click(function () {
 		btn = JSON.parse($(this).val());
 		$('#mtitle').text(getSvcName(btn.s, false) + ' Network ' + btn.n);
 		$('#ip').val(getArrVal(ip, btn.n));
 	});
 
-	// Main modal buttons
+	/******************** MODAL BUTTONS ********************/
 	$('#del').click(function () {
 		$('#ctitle').text('Delete IP');
 		$('#yes').prop('class', 'btn btn-danger');

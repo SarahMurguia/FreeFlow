@@ -19,7 +19,8 @@
 <div class="container"> 
   <!-- Toolbar -->
   <div class="btn-toolbar special">
-    <button id="back" type="button" class="btn btn-sm"> <i class="material-icons">arrow_back</i> </button>
+    <button id="back" type="button" class="btn btn-sm"><em class="material-icons">arrow_back</em></button>
+    <button id="home" type="button" class="btn btn-sm"><em class="material-icons">home</em></button>
     <button id="refresh" type="button" class="btn btn-sm"> <i class="material-icons">refresh</i> </button>
   </div>
   <!-- Tab -->
@@ -33,7 +34,7 @@
     <!-- Netflix -->
     <div class="tab-pane fade show active" id="nf" role="tabpanel">
 	  <!-- If No Account -->
-	  <div id="nonf" class="text-center">Netflix account not found!<br>Please add one before sharing!</div>
+	  <div id="nonf" class="text-center">Netflix account not found!<br>Please add one before sharing.<br><button id="addnf" type="button" class="btn btn-success btn-raised btn-sm">Add Netflix Account</button></div>
 	  <!-- Else -->
       <div id="connf" class="row nflix" hidden>
 		<!-- Network 1 -->
@@ -83,7 +84,7 @@
     <!-- Hulu -->
     <div class="tab-pane fade" id="hl" role="tabpanel">
 	  <!-- If No Account -->
-	  <div id="nohl" class="text-center">hulu account not found!<br>Please add one before sharing.</div>
+	  <div id="nohl" class="text-center">hulu account not found!<br>Please add one before sharing.<br><button id="addhl" type="button" class="btn btn-success btn-raised btn-sm">Add hulu Account</button></div>
 	  <!-- Else -->
       <div id="conhl" class="row hulu" hidden>
 		<!-- Network 1 -->
@@ -133,7 +134,7 @@
     <!-- HBO -->
     <div class="tab-pane fade" id="hb" role="tabpanel">
 	  <!-- If No Account -->
-	  <div id="nohb" class="text-center">HBO account not found!<br>Please add one before sharing!</div>
+	  <div id="nohb" class="text-center">HBO account not found!<br>Please add one before sharing.<br><button id="addhb" type="button" class="btn btn-success btn-raised btn-sm">Add HBO Account</button></div>
 	  <!-- Else -->
       <div id="conhb" class="row hbo" hidden>
 		<!-- Network 1 -->
