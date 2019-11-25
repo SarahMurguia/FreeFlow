@@ -34,3 +34,7 @@ body {
 .special .btn {
 	flex: 1;
 }
+
+.modal-content {
+	border-radius: 10px;
+}

@@ -6,7 +6,7 @@
 }
 
 .nav-link {
-	height: 60px;
+	height: 53px;
 }
 
 .nav-item .nav-link.active {
@@ -23,6 +23,41 @@
 	margin-top: -10px;	
 }
 
-.switch {
-	margin-top: -25px;
+.col-11 {
+	margin-top: -20px;
+	margin-left: 15px;
+}
+
+.bmd-label-static {
+	color: rgba(0,0,0,1.00);
+	margin-left: 15px;
+}
+
+* {
+	font-size: small;
+}
+
+.form-control {
+	height: 25px
+}
+
+.more {
+	top: -15px;
+}
+
+.bmd-form-group.bmd-form-group-sm {
+	padding-top: 18px;
+}
+
+.row > div:not(:first-child) {
+	margin-top: -15px;
+}
+
+.form-control[readonly] {
+	background-color: rgba(0,0,0,0.00);	
+}
+
+.btnicon {
+	font-size: small;
+	vertical-align: bottom;
 }
