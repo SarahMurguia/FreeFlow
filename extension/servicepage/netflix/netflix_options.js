@@ -17,7 +17,14 @@ $(function() {
 							if (chrome.runtime.error) {
 								console.log("Runtime error.");
 							}
-
+							var login = JSON.parse(result);
+							var email = login[0].service_email;	
+							var pass = login[0].service_password; 
+							chrome.tabs.executeScript({
+								code: 'var email = ' + JSON.stringify(email) + ';var pass = ' + JSON.stringify(pass) + ';'
+							}, function() {
+								chrome.tabs.executeScript({file: "/servicepage/netflix/netflix_tab.js"});
+							});
 						});
 
 						window.location.href="/servicepage/servicepage.html";

@@ -19,7 +19,6 @@ $(function() {
 							}
 
 						});
-
 						window.location.href="/servicepage/servicepage.html";
 					}
 				});	

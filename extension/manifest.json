@@ -3,7 +3,7 @@
     "version": "0.01",
     "manifest_version": 2,
     "description": "FreeFlow Chrome Extension",
-    "permissions": ["management", "http://freeflow.tk/*", "http://*.freeflow.tk/*", "storage"],
+    "permissions": ["management", "http://freeflow.tk/*", "http://*.freeflow.tk/*", "https://www.netflix.com/login", "https://auth.hulu.com/web/login?next=null%2F%2Fnull%2Fwelcome", "storage", "tabs", "privacy"],
 
     "icons": {
         "16": "pictures/ff_logo/16.png",
