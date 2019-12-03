@@ -1,4 +1,12 @@
 $(function() {
+	// Modal alert
+	function malert(title, body) {
+		if (title != '')
+			$('.modal-title').text(title);
+		$('.modal-body').html(body);
+		$('#modal').modal('toggle');
+	}
+	
 	// Check if form filled to enable login button
 	$('form input').keyup(function() {
 		var empty = false;
@@ -39,21 +47,22 @@ $(function() {
 
 		// Credential verification
 		$.post(serv, { query: "SELECT * FROM users WHERE username='" + user + "';" }, function(ret) {
-            var obj = JSON.parse(ret);
-            var line = obj[0];	
+			if (ret == ' []')
+				malert('', "Username not found!");
+			else {
+				var obj = JSON.parse(ret);
+				var line = obj[0];	
 
-            if (line.username == user && line.password == pass){
-            	chrome.storage.sync.set({ "user_id" : line.userid}, function() {
-				    if (chrome.runtime.error) {
-				      console.log("Runtime error.");
-				    }
-				});
-				window.location ='/servicepage/servicepage.html';
-				chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
-            }		
-			
-			else{
-				alert("Username or Password Incorrect");
+				if (line.username == user && line.password == pass) {
+					chrome.storage.sync.set({ "user_id" : line.userid}, function() {
+						if (chrome.runtime.error) {
+						  console.log("Runtime error.");
+						}
+					});
+					window.location ='/servicepage/servicepage.html';
+					chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
+				}		
+				else malert('', "Password is incorrect!");
 			}
 		});
 		

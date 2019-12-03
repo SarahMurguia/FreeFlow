@@ -137,6 +137,7 @@ $(function () { // Wait til all DOM loaded
 	});
 
 	/******************** MODAL BUTTONS ********************/
+	// Delete
 	$('#del').click(function () {
 		$('#ctitle').text('Delete IP');
 		$('#yes').prop('class', 'btn btn-danger');
@@ -148,11 +149,15 @@ $(function () { // Wait til all DOM loaded
 			$('#cbtn').prop('hidden', true);
 		}
 	});
+	
+	// GetIP
 	$('#get').click(function () {
 		$.get('http://ipv4.icanhazip.com', function (ret) {
 			$('#ip').val(ret);
 		})
 	});
+	
+	// Save
 	$('#sav').click(function () {
 		$('#ctitle').text('Save New IP');
 		$('#yes').prop('class', 'btn btn-primary');
