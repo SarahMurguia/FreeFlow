@@ -45,7 +45,6 @@ $(function () { // Wait til all DOM loaded
 		if (ret != ' []') {
 			svc[n] = JSON.parse(ret);
 			$.each(svc[n][0], function (key, value) {
-				var net = key.split("network");
 				$('#' + s + key).prop('checked', parseInt(value));
 			});
 			$('#no' + s).val(getSvcName(n, false) + 'account not found<br>Please add one before sharing.');
@@ -184,13 +183,15 @@ $(function () { // Wait til all DOM loaded
 
 	// Confirm button
 	$('#yes').click(function () {
+		var ip;
 		if ($('#yes').attr('class') == 'btn btn-danger') {
 			$('#ip').val('');
+			ip = 'null';
 			var i;
 			for (i = 1; i < 4; i++)
 				changeNet(i, btn.n, false);
-		}
-		$.post(serv, { query: "UPDATE users SET network" + btn.n + "='" + $('#ip').val() + "' WHERE userid = " + user_id + ";" }, function(ret) {
+		} else ip = "'" + $('#ip').val() + "'";
+		$.post(serv, { query: "UPDATE users SET network" + btn.n + " = " + ip + " WHERE userid = " + user_id + ";" }, function(ret) {
 			getStat();
 		});
 	});
