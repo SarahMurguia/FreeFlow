@@ -74,3 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href="/servicepage/servicepage.html";
     }, false);
 }, false);
+
+// Event Listener for Contact Us
+document.addEventListener('DOMContentLoaded', function() {
+    var checkForServices = document.getElementById('ap-cu');
+    checkForServices.addEventListener('click', function() {
+        window.open("https://forms.gle/6FrUoj5qS8ovg3uV9");
+    }, false);
+}, false);
