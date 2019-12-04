@@ -13,17 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(!chrome.runtime.error) {
                     var serv = "http://freeflow.tk/query.php"
                     $.ajaxSetup({async: false});
-
                     $.post(serv, { query: "SELECT password FROM users WHERE userid='" + ret1.user_id + "';"}, function(ret2) {
                         var obj = JSON.parse(ret2);
                         var password = obj[0].password;	
-                        if(password == currPass) {
+                        var hashedpass = md5(currPass);
+                        if(password == hashedpass) {
                             chrome.storage.sync.get("user_id", function(ret3) {
                                 if(!chrome.runtime.error) {
-
-                                    var serv = "http://freeflow.tk/query.php";
                                     $.ajaxSetup({async: false});
-                                    $.post(serv, { query: "UPDATE users SET password='" + pass1 +"' WHERE userid='" + ret3.user_id + "';"});
+                                    $.post(serv, { query: "UPDATE users SET password='" + md5(pass1) +"' WHERE userid='" + ret3.user_id + "';"});
                                 }
                             });
 
