@@ -18,13 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         var obj = JSON.parse(ret2);
                         var password = obj[0].password;	
                         if(password == currPass) {
-                            alert("Current password matches: " + password + " " + currPass);
 
-                            alert("in here")
                             chrome.storage.sync.get("user_id", function(ret3) {
                                 if(!chrome.runtime.error) {
-                                    alert(ret3.user_id);
-                                    alert("UPDATE users SET password='" + pass1 +"' WHERE userid='" + ret3.user_id + "';");
 
                                     var serv = "http://freeflow.tk/query.php";
                                     $.ajaxSetup({async: false});

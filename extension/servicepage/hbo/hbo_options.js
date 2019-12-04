@@ -12,7 +12,6 @@ $(function() {
 						window.location.href="/servicepage/hbo/hbo.html";
 					}
 					else{
-						alert("User found");
 						fount_cred = true;
 						chrome.storage.sync.set({ "hbo_active" : "true"}, function() {
 							if (chrome.runtime.error) {

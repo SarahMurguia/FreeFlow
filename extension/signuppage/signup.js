@@ -38,7 +38,7 @@ $(function() {
 			else if (input['pass-1'] == input['pass-2'])
 				smbtn('pass', true);
 			else {
-				malert('', "Password do not match!")
+				malert('', "Password does not match!")
 				$('#pass-2').val('');
 				smbtn('pass', false);
 			}
