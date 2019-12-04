@@ -15,23 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
     checkDelete.addEventListener('click', function() {
     	if (confirm("Confirm Account Deletion. This is permanent")) {
             // TODO: remove login from database
-            alert("deleting rows in tables");
             chrome.storage.sync.get("user_id", function (result) {
-                alert("userid: " + result.user_id);
                 var serv = "http://freeflow.tk/query.php";
 
                 $.ajaxSetup({async:false});
                 $.post(serv, {query: "DELETE FROM netflix WHERE userid='" + result.user_id + "';"}, function() {
-                    alert("netflix credentials deleted");
                 });
                 $.post(serv, {query: "DELETE FROM hulu WHERE userid='" + result.user_id + "';"}, function() {
-                    alert("hulu credentials deleted");
                 });
                 $.post(serv, {query: "DELETE FROM hbo WHERE userid='" + result.user_id + "';"}, function() {
-                    alert("hbo credentials deleted");
                 });
                 $.post(serv, {query: "DELETE FROM users WHERE userid='" + result.user_id + "';"}, function() {
-                    alert("user deleted");
                 });
             });
 
