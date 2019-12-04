@@ -25,17 +25,13 @@ $(function() {
         var serv = "http://freeflow.tk/query.php";
         // Get entered input
         var email = $('#reset-email').val();
-        alert('email: ' + email);
-
         $.ajaxSetup({async: false});
         $.post(serv, { query: "SELECT * FROM users WHERE email='" + email + "';" }, function(ret) {
             alert('ret: ' + ret);
             if(ret == ' []') {
                 // User not found
-                alert('User with email ' + email + ' not found');
             } else {
                 // User found, must send reset password email
-                alert('User found. Email sent to ' + email + ' to reset password.');
                 window.location ='/loginpage/login.html';
 				chrome.browserAction.setPopup({popup: "/loginpage/login.html"});
             }
