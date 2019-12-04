@@ -28,6 +28,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 $.post(serv, {query: "DELETE FROM users WHERE userid='" + result.user_id + "';"}, function() {
                 });
             });
+            chrome.storage.sync.set({ "netflix_active" : "false"}, function() {
+                if (chrome.runtime.error) {
+                    console.log("Runtime error.");
+                }
+
+            });
+            chrome.storage.sync.set({ "hulu_active" : "false"}, function() {
+                if (chrome.runtime.error) {
+                    console.log("Runtime error.");
+                }
+
+            });
+            chrome.storage.sync.set({ "hbo_active" : "false"}, function() {
+                if (chrome.runtime.error) {
+                    console.log("Runtime error.");
+                }
+
+            });
+
+            chrome.storage.sync.remove("user_id", function () {
+            });
 
             window.location.href="/startpage/popup.html";
             chrome.browserAction.setPopup({popup: "/startpage/popup.html"});
@@ -39,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 
 
+
+      
 // Event Listener for Managing Household
 document.addEventListener('DOMContentLoaded', function() {
     var checkHousehold = document.getElementById('ap-house');
