@@ -23,6 +23,8 @@ $(function() {
 	// Enable/Disable submit button
 	function smbtn(col, stat) {
 		valid[col] = stat;
+		if (!stat)
+			input[col] = '';
 		if (valid['email'] && valid['username'] && valid['pass'])
 			$('#su-enter').prop('disabled', false);
 		else $('#su-enter').prop('disabled', true);
@@ -57,16 +59,11 @@ $(function() {
 		}
 	}
 	
-    // Handler enter key pressed in any input
-    $('form input').keypress(function(e) {
-        if (e.keyCode == 13) {
-            var empty = false;
-            $('form input').each(function() {
-                if($(this).val() == '') { empty = true; }
-            });
-            if (!empty) { $('#login').click() }
-        }
-    });
+	// Enter keypress handler
+	$('input').keypress(function(e) {
+		if (!$('#su-enter').is(':disabled') && e.keyCode == 13)
+			$('#su-enter').click();
+	})
 	
 	/******************** VALIDATION ********************/
 	// Save input everytime user input and verify password everytime length match
@@ -97,8 +94,25 @@ $(function() {
 		$('#modal').modal({backdrop: 'static', keyboard: false});
 		malert("Sign-up", "Submitting information. Please wait...");
 		setTimeout(function () {
-			window.location.href="/servicepage/servicepage.html";
-			chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
+			$.post(serv, {
+				query: "SELECT userid FROM users WHERE username = '" + input['username'] + "';"
+			}, function(ret) {
+				if (ret == ' []') {
+					$('.close').show();
+					$('#modal').modal({backdrop: true, keyboard: true});
+					malert("Alert", "Something wrong! Please try again...");
+				} else {
+					var obj = JSON.parse(ret);
+					var line = obj[0];
+					chrome.storage.sync.set({ "user_id" : line.userid}, function() {
+						if (chrome.runtime.error) {
+						  console.log("Runtime error.");
+						}
+					});
+					window.location ='/servicepage/servicepage.html';
+					chrome.browserAction.setPopup({popup: "/servicepage/servicepage.html"});
+				}
+			})
     	}, 3000);
     });
 });
