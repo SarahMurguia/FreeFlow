@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         var obj = JSON.parse(ret2);
                         var password = obj[0].password;	
                         if(password == currPass) {
-
                             chrome.storage.sync.get("user_id", function(ret3) {
                                 if(!chrome.runtime.error) {
 
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             window.location.href="/accountpage/accountpage.html";
                        
                         } else {
-                            alert("Current password does not match: " + password + " " + currPass);
+                            alert("Current password does not match");
                         }
                     });
                 }

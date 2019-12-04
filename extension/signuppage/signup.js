@@ -87,8 +87,9 @@ $(function() {
 
 	// Submit form
     $('#su-enter').click(function() {
+		var pass = md5(input['pass-1']);
 		$.post(serv, {
-			query: "INSERT INTO users (username, email, password) VALUES ('" + input['username'] + "', '" + input['email'] + "', '" + input['pass-1'] + "');"
+			query: "INSERT INTO users (username, email, password) VALUES ('" + input['username'] + "', '" + input['email'] + "', '" + pass + "');"
 		});
 		$('.close').hide();
 		$('#modal').modal({backdrop: 'static', keyboard: false});

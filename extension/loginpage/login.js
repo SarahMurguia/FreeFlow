@@ -43,7 +43,9 @@ $(function() {
 			pass = $('#pass').val().trim();	// password converted into md5
 		$.ajaxSetup({async: false});
 
-        var serv = "http://freeflow.tk/query.php"
+		var serv = "http://freeflow.tk/query.php";
+		var hashedpass = md5(pass);
+		
 
 		// Credential verification
 		$.post(serv, { query: "SELECT * FROM users WHERE username='" + user + "';" }, function(ret) {
@@ -53,7 +55,7 @@ $(function() {
 				var obj = JSON.parse(ret);
 				var line = obj[0];	
 
-				if (line.username == user && line.password == pass) {
+				if (line.username == user && line.password == hashedpass) {
 					chrome.storage.sync.set({ "user_id" : line.userid}, function() {
 						if (chrome.runtime.error) {
 						  console.log("Runtime error.");
