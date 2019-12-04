@@ -32,7 +32,7 @@ $(function() {
 	
 	// Forget button handler
 	$('#forgotpass').click(function() {
-		window.location.href="/loginpage/forgotpasspage.html";
+		window.open("https://forms.gle/3xJTPG9t1Vxc5CbV7");
 	});
 
 	// Login button handler
