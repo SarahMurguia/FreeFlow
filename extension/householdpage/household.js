@@ -116,9 +116,9 @@ $( function() { // Wait til all DOM loaded
   /** ****************** INIT ********************/
   $( 'body' ).bootstrapMaterialDesign(); // Trigger Material Design Animation
   // Get userId from local storage
-  chrome.storage.sync.get( 'userId', function( ret ) {
+  chrome.storage.sync.get( 'user_id', function( ret ) {
     if ( !chrome.runtime.error ) {
-      userId = ret.userId;
+      userId = ret.user_id;
       getStat(); // Initially get current status
     }
   } );
